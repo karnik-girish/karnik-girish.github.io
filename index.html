@@ -1,8 +1,88 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-github hosting
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <!-- <script src="/JS/Registration.js"></script> -->
+    <script type="text/javascript" src="JS\Registration.js"></script>
+    
 </head>
 <body>
-<p> hello world</p>
+
+        <table>
+            <th>
+                <tr>
+                    <td>
+                        <label for="fname">First name:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="fname" name="fname" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="lname">Last name:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="lname" name="lname" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="eamil">Email:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="email" name="email" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" id="password" name="password" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gender">Gender:   </label>
+                    </td>
+                   <td>
+                     <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label>
+                     <input type="radio" id="female" name="gender" value="female">  <label for="female">Female</label>
+                   </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address">Address:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="address" name="address" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="img">Profile image:</label>
+                    </td>
+                    <td>
+                        <!-- <input type="file" id="img" name="img" accept="image/*" onchange="loadImage()" required> -->
+                        <input type="file" id="profileImage"  accept="image/*" onchange="loadImage();" />
+                            <img style="height: 50%;width: 50%;" id="output" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Submit" onclick="onRegisterUser()">
+                    </td>                   
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <a href="/SignIn.html">Already registered user </a>
+                    </td>
+                </tr>
+            </th>
+        </table>
+
 </body>
 </html>
