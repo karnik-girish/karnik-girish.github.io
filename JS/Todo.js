@@ -33,11 +33,11 @@ window.onunload = function clearLocalStorage(){
 
 
 function validateDate(e){
-   var selectedDte = document.getElementById("reminderDte").value
-   var currentDte = Date.now()
-   if(selectedDte<Date.now())
+     var selectedDte = document.getElementById("reminderDte").value  
+    var today= new Date().toISOString().slice(0,10)
+   if(selectedDte <today)
    {
-       alert("You can't selected passed date");
+       alert("You can't select passed date");
        document.getElementById("reminderDte").value=""
        document.getElementById("reminderDte").focus
    }
