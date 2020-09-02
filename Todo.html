@@ -6,19 +6,17 @@
     <title>ToDo list</title>
     <script src="JS/Todo.js"></script>
     <style>
-        /* #getTodo {
-          border: 1px solid black;
-          margin-top: 30px;      
-          margin-bottom: 100px;
-          margin-right: 150px;
-          margin-left: 80px;
-          background-color: lightblue;    
-          padding-left: 350px;   
-        }*/
-        #userInfo {
+         #userInfo {
             text-align: right;            
         } 
+        
 
+        marquee{
+      font-size: 10px;
+      font-weight: 800;
+      color: #8ebf42;
+      font-family: sans-serif;
+      }
         </style>
 </head>
 <body onload="userDetails()">
@@ -103,22 +101,13 @@
                     <input type="radio" id="All" name="filter" value="All" onclick="filterToDo(id)">  <label for="All"> Show All</label>
                 </td>
             </tr>
-        </table>
-
-      
-
+        </table>     
         </form>
-
-
-     
-
-
+    
         <ul id="todoDisplay" style="list-style-type: none;">
-
-
         </ul>
+          <marquee id="dueToday"></marquee>
     </div> 
-
     
 </body>
 </html>
