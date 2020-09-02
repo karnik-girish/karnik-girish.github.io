@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo list</title>
+    <script src="/js/Todo.js"></script>
+    <style>
+        /* #getTodo {
+          border: 1px solid black;
+          margin-top: 30px;      
+          margin-bottom: 100px;
+          margin-right: 150px;
+          margin-left: 80px;
+          background-color: lightblue;    
+          padding-left: 350px;   
+        }*/
+        #userInfo {
+            text-align: right;            
+        } 
+
+        </style>
+</head>
+<body onload="userDetails()">
+    <p id="userInfo"></p>
+    <a href="/SignIn.html" onclick="userLogout()">Logout</a>
+    <div id="getTodo">
+        <form>  
+        <table>
+            <tr>
+                <td>
+                    <label for="toDoItem">Enter ToDo</label>
+                </td>
+                <td>
+                    <input type="text" id="todoStr" name="todoStr" required>
+                </td>            
+            </tr>      
+            <tr>
+                <td>
+                    <label for="category">Choose Category</label>
+                </td>
+                <td>
+                    <select id="category">
+                        <option value="Office">Office</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Social">Social</option>                   
+                      </select>
+                </td>            
+            </tr>
+            <tr>
+                <td>
+                    <label for="isReminder">Is Reminder</label>
+                </td>
+                <td>
+                    <select id="isReminder" onchange="showDateSelection()">
+                        <option value="No" selected="selected">No</option> 
+                        <option value="Yes">Yes</option>
+                                              
+                      </select>
+                </td>            
+            </tr> 
+            <tr id="dateCtrl" hidden = true>
+                <td>
+                    <label for="reminderDte">Select reminder date:</label>
+                </td>
+                <td>
+                    <input type="date" id="reminderDte" name="reminderDte" onchange="validateDate(event)">
+                </td>            
+            </tr>
+            <tr>
+                <td>
+                    <label for="isPublic">Is public</label>
+                </td>
+                <td>
+                    <select id="isPublic">
+                        <option value="No">No</option> 
+                        <option value="Yes">Yes</option>                
+                      </select>
+                </td>            
+            </tr>
+            <tr>
+                <td>
+                    <label for="img">Upload Attachment:</label>
+                </td>
+                <td>                   
+                    <input type="file" id="profileImage"  accept="image/*" onchange="loadImage();" />
+                        <img style="height: 50%;width: 50%;" id="output" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input id="addtodo" type="submit" value="Add" onclick="addToDo()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="filter">Select Filter</label>
+                </td>
+                <td>
+                    <input type="radio" id="Personal" name="filter" value="Personal" onclick="filterToDo(id)" > <label for="Personal">Personal</label>
+                    <input type="radio" id="Office" name="filter" value="Office" onclick="filterToDo(id)">  <label for="Office">Office</label>
+                    <input type="radio" id="Social" name="filter" value="Social" onclick="filterToDo(id)">  <label for="Social">Social</label>
+                    <input type="radio" id="All" name="filter" value="All" onclick="filterToDo(id)">  <label for="All"> Show All</label>
+                </td>
+            </tr>
+        </table>
+
+      
+
+        </form>
+
+
+     
+
+
+        <ul id="todoDisplay" style="list-style-type: none;">
+
+
+        </ul>
+    </div> 
+
+    
+</body>
+</html>

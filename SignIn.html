@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="/JS/SignIn.js"></script>
+    <script type="text/javascript"> 
+        window.history.forward(); 
+        function noBack() { 
+            window.history.forward(); 
+        } </script>
+    <style>
+        .singin{
+            margin: auto
+        }
+
+    </style>
+</head>
+<body onload="checkUserloggedIn()">    
+        <table class="singin">       
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Password:</label>
+                </td>
+                <td>
+                    <input type="password" id="password" name="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Sign In" onclick="onSignIn()">
+                </td>
+            </tr>
+            <tr>   
+                    <td colspan="2" align="center">
+                        <a href="/RegNew.html">Register user </a>
+                    </td>
+           
+            </tr>
+
+    </table>  
+  
+    
+</body>
+</html>
