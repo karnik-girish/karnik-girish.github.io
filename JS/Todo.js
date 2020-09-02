@@ -5,13 +5,28 @@ const sessionUser =  JSON.parse(sessionStorage.getItem("loggedInUser"));
 let toDoLst=[]
 let editToDoId ;
 
+
+let resStr = "Today's due task's : "
+function concateString(item) {
+    resStr += item.todoTask + " ";
+    document.getElementById("dueToday").innerHTML = resStr;
+  }
+
 function userDetails(){
     try {
       
         if(sessionUser != null){
             getFromLocalStorage()
             document.getElementById("userInfo").innerText = sessionUser.firstName + " " + sessionUser.lastName ;
-            //showDteCtrl.hidden= true;     
+            if( toDoLst!= null){
+                var toDoLst1 = toDoLst.filter((e) => e.user == sessionUser.email)
+                var today= new Date().toISOString().slice(0,10)
+                var dueToday = toDoLst1.filter(e=> e.reminderDte == today)
+                if(dueToday!= null)
+                {
+                    dueToday.forEach(concateString)
+                }        
+            }  
   
         }else{ 
             alert("Session expired ,Please login to load data");
@@ -33,7 +48,7 @@ window.onunload = function clearLocalStorage(){
 
 
 function validateDate(e){
-     var selectedDte = document.getElementById("reminderDte").value  
+      var selectedDte = document.getElementById("reminderDte").value  
     var today= new Date().toISOString().slice(0,10)
    if(selectedDte <today)
    {
